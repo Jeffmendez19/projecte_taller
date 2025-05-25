@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taller Mecànic - Cites Online</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Taller Mecànic RodaSegura</h1>
+    <p>Experts en mecànica des de 1995 - Tracte proper i eficient</p>
+  </header>
+
+  <section id="about">
+    <h2>Qui Som</h2>
+    <p>Som un petit taller familiar amb més de 25 anys d'experiència. Ens especialitzem en la reparació i manteniment de vehicles, amb un enfocament en l'honestedat, l'agilitat i la confiança.</p>
+  </section>
+
+  <section id="services">
+    <h2>Serveis Oferts</h2>
+    <ul class="services-list">
+      <li>Canvi d'oli i filtres</li>
+      <li>Revisions generals</li>
+      <li>Reparació de frens i suspensió</li>
+      <li>Diagnòstic electrònic</li>
+      <li>ITV i emissions</li>
+    </ul>
+  </section>
+
+  <section id="appointment">
+    <h2>Demanar una Cita</h2>
+    <form id="appointmentForm">
+      <label>Data:</label>
+      <input type="date" id="data" required>
+      
+      <label>Servei Sol·licitat:</label>
+      <input type="text" id="servei" placeholder="Ex: canvi d'oli" required>
+      
+      <label>ID Client:</label>
+      <input type="number" id="idClient" placeholder="Ex: 1" required>
+      
+      <label>ID Vehicle:</label>
+      <input type="number" id="idVehicle" placeholder="Ex: 3" required>
+      
+      <button type="submit">Reservar Cita</button>
+    </form>
+  </section>
+
+  <section id="appointments">
+    <h2>Cites Reservades</h2>
+    <ul id="appointmentsList"></ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Taller RodaSegura | info@rodasegura.cat</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
