@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 from flask_mysqldb import MySQL
 
@@ -18,21 +17,21 @@ def get_vehicles():
     vehicles = [{'id': r[0], 'matricula': r[1], 'model': r[2], 'any': r[3], 'idClient': r[4]} for r in rows]
     return jsonify(vehicles)
 
-@app.route('/appointments', methods=['POST'])
+@app.route('/api/cites', methods=['POST'])
 def create_appointment():
     data = request.json
     cur = mysql.connection.cursor()
     cur.execute("INSERT INTO Cites (data, servei, idClient, idVehicle) VALUES (%s, %s, %s, %s)",
-                (data['data'], data['servei'], data['idClient'], data['idVehicle']))
+                (data['data'], data['servei'], data['id_client'], data['id_vehicle']))
     mysql.connection.commit()
     return jsonify({'message': 'Cita creada'}), 201
 
-@app.route('/appointments', methods=['GET'])
+@app.route('/api/cites', methods=['GET'])
 def get_appointments():
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM Cites")
     rows = cur.fetchall()
-    appointments = [{'id': r[0], 'data': r[1], 'servei': r[2], 'idClient': r[3], 'idVehicle': r[4]} for r in rows]
+    appointments = [{'id': r[0], 'data': r[1], 'servei': r[2], 'id_client': r[3], 'id_vehicle': r[4]} for r in rows]
     return jsonify(appointments)
 
 if __name__ == '__main__':
